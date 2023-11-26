@@ -11,7 +11,7 @@ const refs = {
   error: document.querySelector('.error'),
   text: document.querySelector('.cat-info'),
 };
-let selectArr = [];
+let selectArray = [];
 
 refs.loader.classList.replace('loader', 'hidden');
 refs.error.classList.add('hidden');
@@ -21,11 +21,11 @@ refs.select.addEventListener('change', selectBreed);
 fetchBreeds()
   .then(data => {
     data.forEach(element => {
-      selectArr.push({ text: element.name, value: element.id });
+      selectArray.push({ value: element.id, text: element.name });
     });
     new SlimSelect({
       select: refs.select,
-      data: selectArr,
+      data: selectArray,
     });
   })
   .catch(onError);
@@ -44,7 +44,7 @@ function selectBreed(evt) {
       const { url, breeds } = data[0];
 
       refs.text.innerHTML = `<div class="box-img">
-      <img src="${url}" alt="${breeds[0].name}" width="400"/>
+      <img src="${url}" alt="${breeds[0].name}" width="600"/>
       </div>
       <div class="box">
       <h1>${breeds[0].name}</h1>
@@ -67,10 +67,3 @@ function onError() {
     }
   );
 }
-
-//++++++++++
-// function createMarkupSelect(arr) {
-//   return arr
-//     .map(({ id, name }) => `<option value="${id}">${name}</option>`)
-//     .join('');
-// }

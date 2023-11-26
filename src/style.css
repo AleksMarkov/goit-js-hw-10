@@ -1,13 +1,12 @@
 img {
-  width: 400px;
-  border-radius: 10%;
+  width: 600px;
 }
 .cat-info {
   display: flex;
-  margin-top: 30px;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  margin-top: 20px;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 30px;
 }
 .box {
   max-width: 600px;
@@ -20,7 +19,7 @@ h1 {
 .hidden {
   display: none;
 }
-.loader {
+/* .loader {
   width: 8px;
   height: 40px;
   border-radius: 4px;
@@ -31,8 +30,8 @@ h1 {
   color: #530505;
   box-sizing: border-box;
   animation: animloader 0.3s 0.3s linear infinite alternate;
-}
-
+} */
+/* 
 .loader::after,
 .loader::before {
   content: '';
@@ -59,4 +58,4 @@ h1 {
   100% {
     height: 4px;
   }
-}
+} */
