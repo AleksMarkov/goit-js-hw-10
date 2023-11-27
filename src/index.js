@@ -1,5 +1,3 @@
-import Notiflix from 'notiflix';
-import SlimSelect from 'slim-select';
 import { fetchBreeds } from './cat-api';
 import { fetchCatByBreed } from './cat-api';
 import Notiflix from 'notiflix';
@@ -40,7 +38,6 @@ function selectBreed(evt) {
     .then(data => {
       refs.loader.classList.replace('loader', 'hidden');
       refs.select.classList.remove('hidden');
-
       const { url, breeds } = data[0];
 
       refs.text.innerHTML = `<div class="box-img">
@@ -63,7 +60,7 @@ function onError() {
     'Oops! Something went wrong! Try reloading the page!',
     {
       position: 'center-center',
-      fontSize: '30px',
+      fontSize: '40px',
     }
   );
 }
